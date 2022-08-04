@@ -159,64 +159,44 @@
          <arg1>?</arg1>\r
       </jax:subtract>\r
    </soapenv:Body>\r
-</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://jaxws.examples.javacodegeeks.com/CalculatorI/subtractRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="fa376a6d-642b-4af3-a727-5b41da88b7c4" port="8088" path="/mockCalculatorImplPortBinding" host="NAPGL5JQL0K8DOF" name="CalculatorImplPortBinding MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties><con:property><con:name>Version</con:name><con:value>1</con:value></con:property></con:properties><con:mockOperation name="add" id="48f0a919-5e19-4a79-9c5e-42e89174b3e2" interface="CalculatorImplPortBinding" operation="add"><con:settings/><con:defaultResponse>Add Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>import com.eviware.soapui.support.XmlHolder
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://jaxws.examples.javacodegeeks.com/CalculatorI/subtractRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:mockService id="d5b1eff9-b0e7-4c1c-99f7-a9c82c957297" port="8088" path="/mockCalculatorImplPortBinding" host="NAPGLR1SVRRZPJH" name="CalculatorImplPortBinding MockService" incomingWss="" outgoingWss="" dispatchResponseMessages="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-version">false</con:setting></con:settings><con:properties><con:property><con:name>version</con:name><con:value>1</con:value></con:property></con:properties><con:mockOperation name="add" id="8357e986-ef93-4d26-8564-d2e424f19094" interface="CalculatorImplPortBinding" operation="add"><con:settings/><con:defaultResponse>Add Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>import com.eviware.soapui.support.XmlHolder
 def holder = new XmlHolder( mockRequest.requestContent )
 
 def arg0 = holder["//arg0"]
 def arg1 = holder["//arg1"]
 
-if (arg0=='2' &amp;&amp; arg1=='2'){
-    return "Add Response"
-    }</con:dispatchPath><con:response name="Add Response" id="6d275dc6-33b4-43a5-aa07-4c3f0583af37" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
+if (arg0=="2" &amp;&amp; arg1=="2"){
+	return "Add Response"
+	}</con:dispatchPath><con:response name="Add Response" id="8a543639-1523-4e0f-ba67-4caf260b9cad" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:script>int arg0 = 2;
+int arg1 = 3;
+int result = arg0 + arg1;
+
+log.info(result) ;</con:script><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <jax:addResponse>
-         <return>4</return>
+         <return>5</return>
       </jax:addResponse>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/addResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="divide" id="022db2ea-f237-4e6e-9fe5-7c2c8f75df69" interface="CalculatorImplPortBinding" operation="divide"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>import com.eviware.soapui.support.XmlHolder
-def holder = new XmlHolder( mockRequest.requestContent )
-
-def arg0 = holder["//arg0"]
-def arg1 = holder["//arg1"]
-
-if (arg0=='10' &amp;&amp; arg1=='2'){
-    return "Divide Response"
-    }</con:dispatchPath><con:response name="Divide Response" id="a25fec76-4570-424d-8f14-04aba46afb07" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/addResponse"/></con:response><con:dispatchConfig xsi:type="con:MockOperationQueryMatchDispatch" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:mockOperation><con:mockOperation name="divide" id="228e3897-5f56-4f4f-822a-5464a26f97ee" interface="CalculatorImplPortBinding" operation="divide"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:response name="Divide Response" id="87953827-ed37-446a-8eb0-a94df3919204" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <jax:divideResponse>
-         <return>5</return>
+         <return>2</return>
       </jax:divideResponse>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/divideResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="multiply" id="d74b9c81-28bc-4220-89cb-86cd541cf27e" interface="CalculatorImplPortBinding" operation="multiply"><con:settings/><con:defaultResponse>Multiply Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>import com.eviware.soapui.support.XmlHolder
-def holder = new XmlHolder( mockRequest.requestContent )
-
-def arg0 = holder["//arg0"]
-def arg1 = holder["//arg1"]
-
-if (arg0=='3' &amp;&amp; arg1=='3'){
-    return "Multiply Response"
-    }</con:dispatchPath><con:response name="Multiply Response" id="098dc6a4-1f6d-4ecd-8333-4f1d75a165c3" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/divideResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="multiply" id="cea1931c-d581-4646-9e9c-08acc17aef89" interface="CalculatorImplPortBinding" operation="multiply"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Multiply Response" id="50bbdd29-30ce-4303-bd65-f733e46c00f5" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <jax:multiplyResponse>
          <return>9</return>
       </jax:multiplyResponse>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/multiplyResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="subtract" id="ff55e981-54d5-47b3-b6da-3f9069c5fdc1" interface="CalculatorImplPortBinding" operation="subtract"><con:settings/><con:defaultResponse>Subtract Response</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>import com.eviware.soapui.support.XmlHolder
-def holder = new XmlHolder( mockRequest.requestContent )
-
-def arg0 = holder["//arg0"]
-def arg1 = holder["//arg1"]
-
-if (arg0=='6' &amp;&amp; arg1=='3'){
-    return "Subtract Response"
-    }</con:dispatchPath><con:response name="Subtract Response" id="a955038c-5049-4bbf-b3cc-1f58137c87d4" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/multiplyResponse"/></con:response><con:dispatchConfig/></con:mockOperation><con:mockOperation name="subtract" id="94cc42c1-454a-4452-b904-501e6ae08491" interface="CalculatorImplPortBinding" operation="subtract"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Subtract Response" id="4e7b4836-86b7-4279-85e5-190e2743a835" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jax="http://jaxws.examples.javacodegeeks.com/">
    <soapenv:Header/>
    <soapenv:Body>
       <jax:subtractResponse>
-         <return>3</return>
+         <return>8</return>
       </jax:subtractResponse>
    </soapenv:Body>
 </soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://jaxws.examples.javacodegeeks.com/CalculatorI/subtractResponse"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties><con:property><con:name>version</con:name><con:value>1</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
